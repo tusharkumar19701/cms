@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" data-th-replace="base :: parent(~{::#content},~{::title}, ~{::script} )">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" data-th-href="@{'/css/output.css'}">
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.css" rel="stylesheet" />
+
+    <style>
+        .container {
+            margin: auto;
+            width: 50%;
+            padding: 30px;
+            background-color: #e2e2e2;
+        }
+    </style>
+</head>
+<body>
+    <div id="content" class="bg-gray-200 w-1/2 p-4 mx-auto mt-10 flex flex-col space-y-4">
+        <h1 class="text-3xl font-bold" data-th-text="${name}">Welcome to home page</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit reprehenderit, consequatur nulla laborum animi dolores, vel, necessitatibus recusandae eum nobis vitae odio assumenda facere. Assumenda quisquam doloremque quod fugit eaque.</p>
+        <div class="">
+            <button class="px-3 py-4 bg-blue-600 text-white rounded hover:bg-blue-700 duration-200 cursor-pointer">Click Here</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
+</body>
+</html>
