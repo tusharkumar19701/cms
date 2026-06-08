@@ -8,33 +8,36 @@
         <div class="flex flex-col justify-center items-center">
             <div class="bg-gray-800 block p-6 w-1/3 rounded shadow-lg">
                 <div data-th-replace="message:: messagebox"></div>
-                <h5 class="mb-1 text-2xl font-bold tracking-tight text-gray-300">Login</h5>
-                <p class="font-normal text-sm text-gray-400">Start managing your contacts on cloud...</p>
+                <h5 class="mb-1 text-2xl font-bold tracking-tight text-left text-gray-300">Login</h5>
+                <p class="font-normal text-sm text-left text-gray-400">Start managing your contacts on cloud...</p>
                 <div class="text-red-600 text-center my-3" th:if="${param.error}">Invalid username and password.</div>
                 <div class="text-green-600 text-center my-3" th:if="${param.logout}">You have been logged out.</div>
                 <form method="post" data-th-action="@{'/authenticate'}" class="mt-3" action="">
                     <div class="">
-                        <label for="email" class="block mb-1 text-sm font-medium text-heading">Username</label>
+                        <label for="email" class="block mb-1 text-left text-sm font-medium text-heading">Username</label>
                         <input name="email" type="email" id="email" class="bg-gray-600 rounded text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body" placeholder="xyz@abc.com" required />
                         <!-- <p data-th-if="${#fields.hasErrors('email')}" data-th-errors="*{email}" class="text-red-500 py-1"> is required</p> -->
                     </div>
     
                     <div class="mt-4">
-                        <label for="password" class="block mb-1 text-sm font-medium text-heading">Password</label>
+                        <label for="password" class="block mb-1 text-left text-sm font-medium text-heading">Password</label>
                         <input name="password" type="password" id="password" class="bg-gray-600 rounded text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body" placeholder="Enter password" required />
                         <!-- <p data-th-if="${#fields.hasErrors('password')}" data-th-errors="*{password}" class="text-red-500 py-1"> is required</p> -->
                     </div>
 
           
-                    <div class="flex gap-2 justify-end">
-                        <div class="mt-3">
+                    <div class="flex gap-2 justify-center">
+                        <div class="mt-6">
                             <button type="submit" class="px-3 py-2 rounded bg-blue-600 hover:bg-blue-800 cursor-pointer transition duration-300">Login</button>
                         </div>
-                        <div class="mt-3">
+                        <div class="mt-6">
                             <button type="reset" class="px-3 py-2 rounded bg-white text-black cursor-pointer transition duration-300">Reset</button>
                         </div>
                     </div>
                 </form>
+                <div class="mt-10">
+                    <a data-th-href="@{/oauth2/authorization/google}" class="login-with-google-btn ">Login With Google</a>
+                </div>
             </div>
         </div>
     </div>
