@@ -59,6 +59,7 @@ public class OAuthAuthenticationSuccessHandler implements AuthenticationSuccessH
         user1.setProvider(Providers.GOOGLE);
         user1.setProviderUserId(user.getName());
         user1.setRoleList(List.of(AppConstants.ROLE_USER));
+        user1.setEmailVerified(true);
 
         User user2 = userRepo.findByEmail(email).orElse(null);
 
